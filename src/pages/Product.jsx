@@ -20,13 +20,15 @@ const Product = () => {
       }
     });
   };
+
   useEffect(() => {
     fetchProductData();
   }, [productId]);
+
   return productData ? (
     <div className="border-t-2 pt-10 transition-opacity ease-in duration-100 opacity-100">
       {/* Product Data */}
-      <div className="flex gap-12  sm:gap-12 flex-col sm:flex-row">
+      <div className="flex gap-12 sm:gap-12 flex-col sm:flex-row">
         {/* Product images */}
         <div className="flex-1 flex flex-col-reverse gap-3 sm:flex-row">
           <div className="flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full">
@@ -44,7 +46,8 @@ const Product = () => {
             <img className="w-full h-auto" src={image} alt="" />
           </div>
         </div>
-        {/* ************************  product info********************************************* */}
+
+        {/* Product info */}
         <div className="flex-1">
           <h1 className="font-medium text-2xl mt-2">{productData.name}</h1>
           <div className="flex items-center gap-1 mt-2">
@@ -59,8 +62,9 @@ const Product = () => {
             {currency} {productData.price}
           </p>
           <p className="mt-5 text-gray-500 md:4/5">{productData.description}</p>
+
           <div className="flex flex-col gap-4 my-8">
-            <p>Seclect Size</p>
+            <p>Select Size</p>
             <div className="flex gap-2">
               {productData.sizes.map((item, index) => (
                 <button
@@ -83,42 +87,41 @@ const Product = () => {
           </button>
           <hr className="mt-8 sm:4/5" />
           <div className="text-sm text-gray-500 mt-5 flex flex-col gap-1">
-            <p>100% Original product.</p>
-            <p>Cash on delivery is available on this product.</p>
-            <p>Easy return and exchange policy within 7 days.</p>
+            <p>100% Original product guaranteed.</p>
+            <p>Cash on delivery is available for this product.</p>
+            <p>Easy returns and exchanges within 7 days of delivery.</p>
           </div>
         </div>
       </div>
-      {/*  ************************************Description & Review Section*************************************** */}
+
+      {/* Description & Review Section */}
       <div className="mt-20">
         <div className="flex">
           <b className="border px-5 py-3 text-sm">Description</b>
-          <p className="border px-5 py-3 text-sm">Reviews 122</p>
+          <p className="border px-5 py-3 text-sm">Reviews (122)</p>
         </div>
         <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
           <p>
-            An e-commerce website is an online platform that facilitates the
-            buing and Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Unde porro commodi quaerat reiciendis quasi rem nobis sequi
-            obcaecati quibusdam eius! Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Atque, ipsa!
+            This product is crafted using premium materials, designed to provide
+            a comfortable and durable experience. It combines style with
+            functionality, making it perfect for everyday use.
           </p>
           <p>
-            E-commerce website typically display product or service along with
-            detailed Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Nulla, nemo ipsa? Doloribus consectetur ad ex? Exercitationem quos
-            illum distinctio. Laboriosam!
+            Whether you're going for a casual look or something more formal,
+            this product offers the versatility you need. Its timeless design
+            ensures it remains in fashion for years to come.
           </p>
         </div>
       </div>
-      {/*  ****************display related products ************************************* */}
+
+      {/* Related Products */}
       <RelatedProducts
         category={productData.category}
         subCategory={productData.subCategory}
       />
     </div>
   ) : (
-    <div className="opecity-0"></div>
+    <div className="opacity-0"></div>
   );
 };
 
