@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 
 export const ShopContext = createContext();
 const ShopContextProvider = (props) => {
-  const currency = "$";
-  const delivery_fee = 10;
+  const currency = " ₹";
+  const delivery_fee = 0;
 
   const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState(false);
@@ -85,10 +85,8 @@ const ShopContextProvider = (props) => {
   };
 
   useEffect(() => {
-    console.log(cartItems);
+    // console.log(cartItems);
   }, [cartItems]);
-  return (
-    <ShopContext.Provider value={value}>{props.children}</ShopContext.Provider>
-  );
+  return <ShopContext.Provider value={value}>{props.children}</ShopContext.Provider>;
 };
 export default ShopContextProvider;

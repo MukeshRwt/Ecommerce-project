@@ -8,9 +8,9 @@ const Footer = () => {
         <div>
           <img src={assets.logo} alt="" className="mb-5 w-32" />
           <p className="w-full md:w-2/3 text-gray-600">
-            At Forever You, we are dedicated to offering a curated selection of
-            fashion-forward styles. Our goal is to provide timeless pieces that
-            enhance your wardrobe with quality and style.
+            At Forever You, we are dedicated to offering a curated selection of fashion-forward
+            styles. Our goal is to provide timeless pieces that enhance your wardrobe with quality
+            and style.
           </p>
         </div>
         <div>
@@ -25,7 +25,7 @@ const Footer = () => {
         <div>
           <p className="text-xl font-medium mb-5">GET IN TOUCH</p>
           <ul className="flex flex-col gap-1 text-gray-600">
-            <li>+1-212-456-7890</li>
+            <li>7534009305</li>
             <li>contact@foreveryou.com</li>
           </ul>
         </div>

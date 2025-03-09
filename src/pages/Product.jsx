@@ -23,7 +23,7 @@ const Product = () => {
 
   useEffect(() => {
     fetchProductData();
-  }, [productId]);
+  }, [productId, products]);
 
   return productData ? (
     <div className="border-t-2 pt-10 transition-opacity ease-in duration-100 opacity-100">
@@ -102,23 +102,20 @@ const Product = () => {
         </div>
         <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
           <p>
-            This product is crafted using premium materials, designed to provide
-            a comfortable and durable experience. It combines style with
-            functionality, making it perfect for everyday use.
+            This product is crafted using premium materials, designed to provide a comfortable and
+            durable experience. It combines style with functionality, making it perfect for everyday
+            use.
           </p>
           <p>
-            Whether you're going for a casual look or something more formal,
-            this product offers the versatility you need. Its timeless design
-            ensures it remains in fashion for years to come.
+            Whether you're going for a casual look or something more formal, this product offers the
+            versatility you need. Its timeless design ensures it remains in fashion for years to
+            come.
           </p>
         </div>
       </div>
 
       {/* Related Products */}
-      <RelatedProducts
-        category={productData.category}
-        subCategory={productData.subCategory}
-      />
+      <RelatedProducts category={productData.category} subCategory={productData.subCategory} />
     </div>
   ) : (
     <div className="opacity-0"></div>
